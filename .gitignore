@@ -1,0 +1,39 @@
+# Ignore WordPress core
+/wp-admin/
+/wp-includes/
+
+# Ignore WordPress core files
+index.php
+license.txt
+readme.html
+xmlrpc.php
+
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+
+# Ignore uploads
+/wp-content/uploads/
+
+# Ignore everything in wp-content except themes and plugins
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+
+# Ignore all themes/plugins except our custom ones
+/wp-content/themes/*
+!/wp-content/themes/university-theme/
+
+/wp-content/plugins/*
+!/wp-content/plugins/university-utilities/
+.htaccess
