@@ -1,3 +1,1402 @@
-body{
-    background-color:red;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+      overflow-x:hidden;
+}
+
+.container{
+    max-width:1196px;
+    width:100%;
+    margin:0 auto;
+    padding:0 15px;
+}
+
+/*---------------------- Header Start --------------------------*/
+
+
+.site-header{
+    position: relative;
+    background: #0D1C30;
+}
+
+.header-logo{
+    flex:1;
+}
+
+.header-top{
+    display:flex;
+    align-items:center;
+}
+
+/* Toggle Button */
+.menu-toggle{
+    display:flex;
+    width:51px;
+    height:36px;
+    padding:0;
+    border:0;
+    background:#0E5976;      
+    border-radius:8px;       
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:4px;
+    z-index:1001;
+}
+
+.menu-toggle span{
+    display:block;
+    width:18px;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:all .3s ease;
+}
+.menu-toggle{
+    display:none;
+}
+.menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+.header-logo img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.main-navigation{
+    display:flex;
+    justify-content:center;
+}
+
+.main-navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 41px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-navigation ul li a{
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.main-navigation ul li a:hover{
+    color: #FBCB3B;
+}
+
+.apply-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #F6C63C;
+    color: #082B40;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.apply-btn:hover{
+    background: #FBCB3B;
+}
+
+.header-bottom{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2px;
+}
+
+.header-action{
+    margin-left:40px;
+}
+
+.header-bottom::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 33px;
+    transform: translateX(-50%);
+    width: min(99vw, 1728px);
+    height: 4px;
+    background: #082B40;
+}
+.header-link{
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #FBCB3B;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    top: -3px;    
+    left: 5px;
+    z-index: 2;
+     margin-left:80px;
+}
+
+
+
+.header-link:hover{
+    text-decoration: underline;
+}
+
+/*---------------------- Hero Banner Start --------------------------*/
+
+.hero{
+    width:100%;
+}
+
+.slider{
+    position:relative;
+    width:100%;
+    height:791px;
+    overflow:hidden;
+}
+
+/* Slides Wrapper */
+
+.slides{
+    display:flex;
+    width:100%;
+    height:791px;
+    transition:transform .6s ease-in-out;
+}
+
+/* Individual Slide */
+
+.slide{
+    position:relative;
+    flex:0 0 100%;
+    width:100%;
+    height:791px;
+}
+
+/* Banner Image */
+
+.slide img{
+    width:100%;
+    height:791px;
+    object-fit:cover;
+    display:block;
+}
+
+.slide::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:294px;
+    background:linear-gradient(
+        to bottom,
+        rgba(8,43,64,0) 0,
+        rgba(8,43,64,1) 80px,
+        #082B40 80px,
+        #082B40 100%
+    );
+    z-index:2;
+}
+
+/* Hero Text */
+
+.overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    top:577px;
+    height:214px; /* 791 - 577 */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    z-index:3;
+}
+
+.overlay h1{
+    margin:0 0 15px;
+    font-size:40px;
+    line-height:67px;
+    font-weight:700;
+    color:#fff;
+}
+
+.overlay p{
+    max-width:860px;
+  color:#fff;
+    margin:20px 0 0;
+    font-size:18px;
+    line-height:30px;
+    font-weight:400;
+}
+
+/* Dots */
+
+.dots{
+    position:static;
+    transform:none;
+    display:flex;
+    gap:12px;
+    margin-top:20px;   /* Exact 20px gap */
+}
+
+.dot{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    border:3px solid #fff;
+    background:transparent;
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#73E28D;
+    border-color:#73E28D;
+}
+
+/*Slider Arrows */
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:76px;
+    height:76px;
+    border:none;
+    background:#0E5976;
+    color:#72F0A8;
+    font-size:26px;
+    cursor:pointer;
+    z-index:20;
+}
+
+.prev{
+    left:0;
+}
+
+.next{
+    right:0;
+}
+
+.hero-arrow{
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:10px;
+    margin-top:-3px;
+}
+
+.hero-arrow img{
+    width:18px;
+    height:18px;
+    display:block;
+}
+/*---------------------- Tops 3 boxes Section ------------------------*/
+
+
+.stats-section{
+    padding:79px 0;
+    background:#082B40;
+}
+
+/* Grid */
+
+.stats-grid{
+    display:flex;
+    gap:28px;
+}
+
+/* Card */
+
+.stat-card{
+    width:380px;
+    background:#00374E;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* Image */
+
+.stat-card img{
+    width:100%;
+    height:202px;
+    display:block;
+    object-fit:cover;
+}
+
+/* Content */
+
+.stat-content{
+    padding:20px 20px 36px;
+}
+
+/* Heading */
+
+.stat-content h3{
+    margin:0;
+    font-size:32px;
+    line-height:48px;
+    font-weight:700;
+    color:#FBCB3B;
+}
+
+/* Yellow Line */
+
+.stat-content h3::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    margin-top:8px;
+    background:#FEC52E;
+}
+
+/* Paragraph */
+
+.stat-content p{
+    margin:36px 0 0;
+    font-size:18px;
+    line-height:28px;
+    font-weight:400;
+    color:#FFFFFF;
+}
+
+/*------------------- Why Choose Aberdeen Start ----------------*/
+
+
+.why-aberdeen{
+    background:#D7E0E3;
+    padding:80px 0;
+}
+
+/* Heading */
+
+.section-heading{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 40px;
+}
+
+.section-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.section-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#5F5633;
+    margin:12px auto 0;
+}
+
+.section-heading p{
+    margin:40px 0 0;
+    color:#00374E;
+    font-size:18px;
+    line-height:28px;
+    font-weight:400;
+}
+
+/* Grid */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px 28px;
+}
+
+/* Card */
+
+.why-card{
+    background:#FEF8E4;
+    border-radius:24px;
+    overflow:hidden;
+}
+
+/* Image */
+
+.why-card img{
+    width:100%;
+    height:202px;
+    object-fit:cover;
+    display:block;
+}
+
+/* Content */
+
+.why-content{
+    padding:20px 20px 36px;
+}
+
+.why-content h3{
+    margin:0;
+    color:#5F5633;
+    font-size:32px;
+    line-height:48px;
+    font-weight:700;
+}
+
+.why-content h3::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#FBCB3B;
+    margin-top:8px;
+}
+
+.why-content p{
+    margin:20px 0 0;
+    color:#383A31;
+    font-size:18px;
+    line-height:28px;
+}
+
+/*------------------- Why Choose Aberdeen Start ----------------*/
+/*=========================================
+Discover Aberdeen
+=========================================*/
+
+.discover-section{
+    background:#FFFFFF;
+    padding:80px 0 80px;
+}
+
+/* Heading */
+
+.discover-heading{
+    max-width:1196px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.discover-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.discover-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:6px;
+    background:#FBCB3B;
+    margin:12px auto 0;
+}
+
+.discover-heading p{
+    max-width:1196px;
+    margin:40px auto 0;
+    color:#00374E;
+    font-size:18px;
+    line-height:28px;
+    font-weight:400;
+}
+
+/* Video */
+
+.discover-video{
+    margin-top:40px;
+}
+
+.discover-video iframe{
+    width:100%;
+    height:400px;
+    border:0;
+    display:block;
+}
+/* Play Button */
+
+.play-btn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.play-btn img{
+    width:54px;
+    height:auto;
+}
+
+/* ........................Discover Our Alumni ....................*/
+/*=========================================
+Discover Our Alumni
+=========================================*/
+
+.alumni-section{
+    background:#D7E0E3;
+    padding:80px 0;
+}
+
+/* Heading */
+
+.alumni-heading{
+    margin-bottom:28px;
+}
+
+.alumni-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.alumni-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#5F5633;
+    margin-top:8px;
+}
+
+/* Layout */
+
+.alumni-wrapper{
+    display:flex;
+    align-items:flex-start;
+    gap:28px;
+}
+
+/* Image */
+
+.alumni-image{
+    flex:0 0 687px;
+}
+
+.alumni-image img{
+    width:100%;
+    height:385px;
+    object-fit:cover;
+    display:block;
+    border-radius:12px;
+}
+
+/* Content */
+
+.alumni-content{
+    flex:1;
+}
+
+.alumni-content p{
+    margin:0;
+    color:#383A31;
+    font-size:18px;
+    line-height:28px;
+}
+
+.alumni-content p + p{
+    margin-top:28px;
+}
+
+/* Button */
+
+.alumni-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:122px;
+    height:44px;
+    margin-top:32px;
+    background:#FBCB3B;
+    border-radius:50px;
+    text-decoration:none;
+    color:#383A31;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* .................Careers and Employability ....................*/
+/*=========================================
+Careers and Employability
+=========================================*/
+
+.Careers-Employability{
+    background:#D7E0E3;
+    padding:80px 0;
+}
+
+/* Heading */
+
+.careers-employability-heading{
+    margin-bottom:28px;
+}
+
+.careers-employability-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.careers-employability-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#5F5633;
+    margin-top:8px;
+}
+
+/* Layout */
+
+.careers-employability-wrapper{
+    display:flex;
+    align-items:flex-start;
+    gap:28px;
+}
+
+/* Image */
+
+.careers-employability-image{
+    flex:0 0 687px;
+}
+
+.careers-employability-image img{
+    width:100%;
+    height:385px;
+    object-fit:cover;
+    display:block;
+    border-radius:12px;
+}
+
+/* Content */
+
+.careers-employability-content{
+    flex:1;
+}
+
+.careers-employability-content p{
+    margin:0;
+    color:#383A31;
+    font-size:18px;
+    line-height:28px;
+}
+
+.careers-employability-content p + p{
+    margin-top:28px;
+}
+
+/* Button */
+
+.careers-employability-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:122px;
+    height:44px;
+    margin-top:32px;
+    background:#FBCB3B;
+    border-radius:50px;
+    text-decoration:none;
+    color:#383A31;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.careers-employability-btn:hover{
+    background:#e7b400;
+}
+
+/* .......................Ready Move forward section................. */
+
+.ready-forward{
+    background:#fff;
+    padding:80px 0px 0px 0px;
+}
+
+.ready-wrapper{
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.ready-image{
+    position:relative;
+    z-index:2;
+    margin-right:-34px;
+}
+
+.ready-image img{
+    width:299px;
+    height:200px;
+    object-fit:cover;
+    border-radius:24px;
+    display:block;
+}
+
+.ready-content{
+    width:928px;
+    min-height:282px;
+    background:#00374E;
+    border-radius:12px;
+    padding:24px 68px;
+    box-shadow:0 10px 16px rgba(0,0,0,.24),
+               0 2px 5px rgba(0,0,0,.15);
+}
+
+.ready-content h2{
+    margin:0;
+    color:#FBCB3B;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.ready-content h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#486F80;
+    margin-top:8px;
+}
+
+.ready-content p{
+    margin:32px 0 0;
+    color:#FEF8E4;
+    font-size:18px;
+    line-height:28px;
+}
+
+.ready-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:151px;
+    height:44px;
+    margin-top:36px;
+    background:#FBCB3B;
+    color:#00374E;
+    font-size:18px;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:22px;
+}
+
+/* .....................Students Life at Aberdeen ..................*/
+
+
+.students-life{
+    background:#FFFFFF;
+    padding:80px 0;
+}
+
+/* Heading */
+
+.students-life-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.students-life-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.students-life-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#FBCB3B;
+    margin:8px auto 0;
+}
+
+.students-life-heading p{
+    max-width:1196px;
+    margin:40px auto 0;
+    color:#00374E;
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
+}
+
+/* Grid */
+
+.students-life-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+}
+
+/* Card */
+
+.students-life-card{
+    background:#00374E;
+    border-radius:24px;
+    overflow:hidden;
+}
+
+.students-life-card img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
+    display:block;
+}
+
+.students-life-content{
+    padding:20px 20px 36px;
+}
+
+.students-life-content h3{
+    margin:0;
+    color:#FBCB3B;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.students-life-content h3::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#486F80;
+    margin-top:8px;
+}
+
+.students-life-content p{
+    margin:36px 0 0;
+    color:#FEF8E4;
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
+}
+
+/*--------------------- Latest blog -------------------------------*/
+/*==============================
+Latest News
+==============================*/
+
+.latest-news{
+    background:#FFFFFF;
+    padding:80px 0;
+}
+
+/* Heading */
+
+.latest-news-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.latest-news-heading h2{
+    margin:0;
+    color:#383A31;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.latest-news-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#FBCB3B;
+    margin:8px auto 0;
+}
+
+/* Layout */
+
+.latest-news-wrapper{
+    display:flex;
+    gap:28px;
+    align-items:flex-start;
+}
+
+/*==============================
+Left Featured News
+==============================*/
+
+.featured-news{
+    width:584px;
+    background:#FEF8E4;
+    border-radius:0 0 24px 24px;
+    overflow:hidden;
+}
+
+.featured-news-image img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
+    display:block;
+}
+
+.featured-news-content{
+    padding:20px 20px 36px;
+}
+
+.featured-news-content h3{
+    margin:0;
+    color:#5F5633;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.featured-news-content h3::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#FBCB3B;
+    margin-top:8px;
+}
+
+.featured-news-content p{
+    margin:36px 0 0;
+    color:#5F5633;
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
+}
+
+/* Read More */
+
+.featured-news-btn {
+    margin-top: 36px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1B4C6140;
+    border-top: 1px solid #1B4C6140;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #5F5633;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    text-decoration: none;
+}
+.featured-news-btn img{
+    width:20px;
+    height:20px;
+}
+
+/*==============================
+Right News
+==============================*/
+
+.latest-news-list{
+    width:584px;
+}
+
+.news-item{
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    padding:0 0 28px;
+    margin-bottom:28px;
+    border-bottom: 1px solid #486F80;
+    text-decoration:none;
+}
+
+.news-item:last-child{
+    margin-bottom:0;
+}
+
+.news-thumb{
+    flex:0 0 177px;
+}
+
+.news-thumb img{
+    width:177px;
+    height:115px;
+    object-fit:cover;
+    border-radius:4px;
+    display:block;
+}
+
+.news-title{
+    flex:1;
+}
+
+.news-title h4{
+    margin:0;
+    color:#5F5633;
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
+}
+
+/* Felling inspired */
+/* .......................Ready Move forward section................. */
+
+.feeling-inspired{
+    background:#fff;
+    padding:80px 0px 80px 0px;
+}
+
+.feeling-wrapper{
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.feeling-image{
+    position:relative;
+    z-index:2;
+    margin-right:-34px;
+}
+
+.feeling-image img{
+    width:299px;
+    height:200px;
+    object-fit:cover;
+    border-radius:24px;
+    display:block;
+}
+
+.feeling-content{
+    width:928px;
+    min-height:282px;
+    background:#00374E;
+    border-radius:12px;
+    padding:24px 68px;
+    box-shadow:0 10px 16px rgba(0,0,0,.24),
+               0 2px 5px rgba(0,0,0,.15);
+}
+
+.feeling-content h2{
+    margin:0;
+    color:#FBCB3B;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.feeling-content h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#486F80;
+    margin-top:8px;
+}
+
+.feeling-content p{
+    margin:32px 0 0;
+    color:#FEF8E4;
+    font-size:18px;
+    line-height:28px;
+}
+
+.apply-btns{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:151px;
+    height:44px;
+    margin-top:36px;
+    background:#FBCB3B;
+    color:#00374E;
+    font-size:18px;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:22px;
+}
+/* Our Programmes and course making section */
+/*==============================
+Our Programmes
+==============================*/
+
+.our-programmes{
+    background:#082B40;
+    padding:80px 0;
+}
+
+.our-programmes-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.our-programmes-heading h2{
+    margin:0;
+    color:#FBCB3B;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.our-programmes-heading h2::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#486F80;
+    margin:8px auto 0;
+}
+
+/* Grid */
+
+.our-programmes-grid{
+    display:flex;
+    gap:28px;
+}
+
+.programme-card{
+    width:584px;
+    background:#00374E;
+    border-radius:0 0 24px 24px;
+    overflow:hidden;
+}
+
+.programme-image img{
+    width:100%;
+    height:310px;
+    object-fit:cover;
+    display:block;
+}
+
+.programme-content{
+    padding:20px 20px 28px;
+}
+
+.programme-content h3{
+    margin:0;
+    color:#FBCB3B;
+    font-size:32px;
+    font-weight:700;
+    line-height:48px;
+}
+
+.programme-content h3::after{
+    content:"";
+    display:block;
+    width:75px;
+    height:4px;
+    background:#486F80;
+    margin-top:8px;
+}
+
+.programme-content p{
+    margin:36px 0;
+    color:#FEF8E4;
+    font-size:18px;
+    line-height:28px;
+}
+
+.programme-btn{
+    padding:12px 0;
+    border-top:1px solid rgba(251,203,59,.25);
+    border-bottom:1px solid rgba(251,203,59,.25);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    text-decoration:none;
+}
+
+.programme-btn span{
+    color:#FBCB3B;
+    font-size:16px;
+    font-weight:700;
+    line-height:20px;
+}
+
+.programme-btn img{
+    width:20px;
+    height:20px;
+}
+/* course css include in prgramee section */
+.single-course{
+    padding:80px 0;
+}
+
+.course-content{
+    margin:30px 0;
+}
+
+.course-information{
+    margin-top:40px;
+    padding:30px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    background:#f8f8f8;
+}
+
+.course-information h2{
+    margin-bottom:20px;
+}
+
+.course-information ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.course-information li{
+    margin-bottom:15px;
+    font-size:18px;
+}
+
+/* ............................footer css start ................... */
+
+
+.site-footer{
+    background:#111D2F;
+    overflow:hidden;
+
+}
+
+.footer-top{
+    padding:50px 0;
+    background:linear-gradient(
+        180deg,
+        #111D2F 0%,
+        #163B4E 45%,
+        #1B4C61 100%
+    );
+
+}
+
+.footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.footer-left{
+    max-width:320px;
+}
+
+.footer-logo{
+    display:inline-block;
+}
+
+.footer-address{
+    margin-top:20px;
+    color:#fff;
+    font-size:18px;
+   line-height:23px;
+}
+
+.footer-phone{
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.phone-label{
+    color:#fff;
+    font-size:18px;
+    font-weight:400;
+    line-height:28px;
+}
+
+.phone-number{
+    color:#FBCB3B;
+    font-size:18px;
+    line-height:36px;
+    font-weight:400;
+    text-decoration:none;
+
+}
+
+.footer-links{
+    margin-top:30px;
+    padding:0;
+    list-style:none;
+}
+
+.footer-links li+li{
+    margin-top:16px;
+}
+
+.footer-links a{
+    color:#FFCC33;
+    text-decoration:none;
+    font-size:18px;
+}
+
+.footer-right{
+    text-align:center;
+}
+
+.footer-right h3{
+    color:#fff;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.footer-social img{
+    width:30px;
+    height:28px;
+    display:block;
+}
+
+.footer-bottom {
+    background: #111D2F;
+    padding: 40px 0;
+}
+
+.footer-bottom-menu{
+    display:flex;
+   justify-content:center;
+    gap:35px;
+    list-style:none;
+    padding:0;
+    margin:0 0 16px;
+}
+
+.footer-bottom-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 28px;
+}
+.copyright {
+    padding: 20px 0px 0px 0px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
 }
