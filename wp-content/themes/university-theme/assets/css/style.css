@@ -23,7 +23,15 @@ body {
     position: relative;
     background: #0D1C30;
 }
+.overlay h1,
+.overlay p{
+    transition: color .3s ease;
+}
 
+.slide:hover .overlay h1,
+.slide:hover .overlay p{
+    color: #73D87C; /* Replace with your exact Figma green */
+}
 .header-logo{
     flex:1;
 }
