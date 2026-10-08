@@ -1,0 +1,132 @@
+.program-admin-wrapper {
+	max-width: 100%;
+	margin: 20px 0;
+}
+
+.program-admin-card {
+	background: #ffffff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 24px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.program-admin-card h2 {
+	margin: 0 0 20px;
+	font-size: 20px;
+}
+
+.program-admin-field {
+	margin-bottom: 20px;
+}
+
+.program-admin-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.program-admin-heading h2 {
+	margin-bottom: 5px;
+}
+
+.program-admin-heading p {
+	margin: 0;
+	color: #646970;
+}
+
+.program-admin-empty {
+	padding: 30px;
+	text-align: center;
+	background: #f6f7f7;
+	border: 1px dashed #c3c4c7;
+	border-radius: 6px;
+	color: #646970;
+}
+
+.program-section-row {
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	margin-bottom: 16px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.program-section-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 16px 20px;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.program-section-title {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.program-section-title strong {
+	color: #1d2327;
+}
+
+.program-section-title span {
+	color: #646970;
+}
+
+.program-section-actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.program-section-body {
+	padding: 20px;
+}
+
+.program-image-field {
+	margin-top: 20px;
+}
+
+.program-image-field > label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.program-image-preview {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 15px;
+}
+
+.program-image-preview img {
+	width: 160px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 6px;
+	border: 1px solid #dcdcde;
+}
+
+@media (max-width: 782px) {
+	.program-section-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.program-admin-heading {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.program-section-actions {
+		width: 100%;
+	}
+}
