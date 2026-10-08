@@ -74,3 +74,49 @@ document.addEventListener('DOMContentLoaded', function () {
     showSlide(0);
 
 });
+
+/**
+ * Program click tracking.
+ */
+document.addEventListener(
+    'click',
+    function (event) {
+
+        const trackedElement =
+            event.target.closest('[data-track]');
+
+        if (!trackedElement) {
+            return;
+        }
+
+        const trackingData =
+            trackedElement.getAttribute('data-track');
+
+        if (!trackingData) {
+            return;
+        }
+
+        let payload;
+
+        try {
+            payload = JSON.parse(trackingData);
+        } catch (error) {
+            return;
+        }
+
+        fetch(
+            '/programs-practical/wp-json/programs/v1/track',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload),
+                keepalive: true
+            }
+        ).catch(function () {
+            // Tracking failure must never break navigation.
+        });
+    },
+    true
+);
