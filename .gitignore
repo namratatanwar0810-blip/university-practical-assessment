@@ -37,3 +37,9 @@ wp-trackback.php
 /wp-content/plugins/*
 !/wp-content/plugins/university-utilities/
 .htaccess
+
+# Node dependencies
+wp-content/themes/university-theme/node_modules/
+
+# Tracking logs
+wp-content/uploads/logs/
