@@ -1,0 +1,12 @@
+{
+  "name": "university-theme",
+  "version": "1.0.0",
+  "description": "University WordPress Theme",
+  "scripts": {
+     "build": "wp-scripts build src/program-admin.js src/programs-interactivity.js --output-path=build --experimental-modules",
+    "start": "wp-scripts start src/program-admin.js --output-path=build --experimental-modules"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}
